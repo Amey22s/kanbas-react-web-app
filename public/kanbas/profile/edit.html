@@ -1,105 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
-</head>
-<body>
-    <table>
-        <tr>
-            <td valign = "top">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Kanbas</title>
+        <link rel="stylesheet" href="../style.css">
+        <link href="../../vendors/fontawesome/css/all.css" rel="stylesheet"/>
+        <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <div class="wd-grid-row">
+            <div class="wd-kanbas-navigator">
                 <ul>
-                    <li><a href="index.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="../home.html">Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Commons</a></li>
-                    <li><a href="#">Help</a></li>
+                <li class="wd-bg-black">
+                    <img src="../images/neu_logo.png" />
+                </li>
+                <li style="background-color: white;">
+                    <a style="color: #c21f1f"  href="index.html"><i class="fa fa-user fa-2x wd-fg-grey"></i>Account</a> </li> 
+                <li> 
+                    <a href="../dashboard.html"> <i class="fa fa-bars fa-2x wd-bg-red"></i> Dashboard</a></li>
+                <li>
+                <li>
+                    <a href="../home.html"> <i class="fa fa-book fa-2x wd-bg-red"></i> Courses</a>
+                </li>
+                <li> 
+                    <a href="#"> <i class="fa fa-calendar fa-2x wd-fg-red"></i> Calendar</a></li>
+                <li>
+                    <a href="#"> <i class="fa fa-inbox fa-2x wd-fg-red"></i> Inbox</a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fa fa-clock fa-2x wd-fg-red"></i> History</a>
+                </li>
+                <li> 
+                    <a href="#"> <i class="fa fa-desktop fa-2x wd-fg-red"></i> Studio</a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fa fa-arrow-circle-right fa-2x wd-fg-red"></i> Commons </a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fa fa-question-circle fa-2x wd-fg-red"></i> <br> Help</a></li>
                 </ul>
-            </td>
-            <td valign = "top">
-                <ul>
-                    <li><a href="#">Notifications</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Files</a></li>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">ePortfolios</a></li>
-                    <li><a href="#">Shared Content</a></li>
-                    <li><a href="#">The Hub</a></li>
-                    <li><a href="#">Qwickly Course Tools</a></li>
-                    <li><a href="#">Global Announcements</a></li>
-                </ul>
-            </td>
-            <td valign="top">
-                <label><h2>Amey Parab</h2></label>
-                <form id="text-fields">
-                    <label for="text-fields-username">Name:*</label>
-                    <input id="text-fields-username" value="Amey Parab"/>
-                    <label for="text-fields-username">Pronouns:</label>
-                    <select>
-                        <option selected value="speed-grader-edit">None</option>
-                    </select><br>
-                    <p>
-                        <label for="text-fields-username">Title:</label>
-                        <input id="text-fields-username" placeholder=""/><br/>
-                    </p>
+            </div>
+            <div class="wd-grid-col-page-header"> <i class="fa fa-bars fa-2x"> </i> <span style="padding-left: 10px; font-size: 1.3em; font-family: Arial;"> Amey Parab's Profile   </span>
+                <div> <p>  </p></div>
+                <hr>
+            </div>
+        </div>
+        <div class="wd-flex-row-container">
+            <div class="wd-kanbas-page-navigator">
+                <br>
+                <li><a href="#"> Notifications</a> </li>
+                <li style="color: black; border-left: 2px solid">
+                    <a style="color: black; font-weight: 600;" href="index.html"> Profile</a> 
+                </li>
+                <li><a href="#"> Files</a> </li>
+                <li><a href="#"> Settings</a> </li>
+                <li><a href="#"> ePortfolios</a> </li>
+                <li><a href="#"> Shared Content</a> </li>
+                <li><a href="#"> The Hub</a> </li>
+                <li><a href="#"> Qwickly Course Tools</a> </li>
+                <li><a href="#"> Global Announcements</a> </li>
+            </div>
+            <div class="wd-account-profile-edit col-3">
+                <i class="fa fa-user-circle fa-5x wd-bg-grey" aria-hidden="true"></i>
+                <form>
+                    <div class="form-group row mb-3">
+                        <label for="profile-name" class="form-label">Name:*</label>
+                        <div>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="profile-name"
+                                value="Amey Parab"
+                            />
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="profile-pronoun" class="form-label">Pronouns:</label>
+                        <div>
+                            <select class="form-select profile-pronoun">
+                                <option value="none" selected>None</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="profile-title" class="form-label">Title:</label>
+                        <div>
+                            <input type="text" class="form-control profile-title" />
+                        </div>
+                    </div>
                 </form>
-                <p>
-                    <label><h2>Contact</h2></label>
-                    <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
-                </p>
-                <p>
-                    <label><h2>Contact</h2></label>
-                    <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
-                </p>
-                <form id="textarea">
-                    <label><h2>Biography</h2></label>
-                    <p>Graduate Student, Backend Engineer, Cloud Enthusiast</p>
-                    <textarea cols="30" rows="3" >Graduate Student, Backend Engineer, Cloud Enthusiast
-                    </textarea>
-                 </form>
-                 
-                 <p>
-                    <label><h2>Links</h2></label>
-                    <ul>
-                        <li><a href="#">Youtube</a> -> Links to an external site</li>
-                    </ul>
+                <br />
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <td colspan = "1"></td>
-                                <th>URL</th>
-                                <td colspan = "1"></td>
-                            </tr>
-                        </thead>
-                        <tr>
-                            <td><input id="text-fields-username" value="YouTube"/></td>
-                            <td><p>-></p></td>
-                            <td><input id="text-fields-username" value="https://www.youtube.com/"/></td>
-                            <td><a href="#">Remove</a></td>
-                        </tr>
-                    </table>
-                 </p>
-                <button type="button" onclick="navigateToProfileScreen()">Add another link</button><br/>
-                <button type="button" onclick="navigateToProfileScreen()">Cancel</button>
-                <button type="button" onclick="navigateToProfileScreen()">Save Profile</button><br/>
-                <button type="button" onclick="navigateToProfileScreen()">Edit Profile</button>
-                <button type="button" onclick="navigateToProfileScreen()">Cancel Editing</button>
-                <script>
-                    function navigateToProfileScreen() {
-                        window.location.href = 'index.html';
-                    }
-                </script>
-               
+                <div class="profile-contact-info">
+                    <span class="fg-size-larger">Contact</span> <br />
+                    No registered services, you can add some on the settings page.
+                </div>
+                <br />
 
-            </td>
-        </tr>
-    </table>
-</body>
+                <div class="mb-3 row">
+                    <label for="profile-bio" class="form-label fg-size-larger">
+                        Biography</label
+                    >
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="profile-bio" rows="3">Graduate Student, Backend Engineer, Cloud Enthusiast.</textarea>
+                    </div>
+                </div>
+                <br />
+
+                <div class="profile-links">
+                    <span class="fg-size-larger">Links</span>
+
+                    <div class="row" style="text-align: center">
+                        <div class="col-5">Title</div>
+                        <div class="col"></div>
+                        <div class="col-5">URL</div>
+                        <div class="col"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5">
+                            <input type="text" class="form-control" value="YouTube" />
+                        </div>
+                        <div class="col">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-5">
+                            <input
+                                type="text"
+                                class="form-control"
+                                value="https://www.youtube.com/watch?v=9XsRrm-VKj4&t=4674s"
+                            />
+                        </div>
+                        <div class="col">
+                            <i class="fa fa-times wd-fg-red" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-5">
+                            <button class="btn bg-secondary-subtle">
+                                Add another link
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="wd-edit-profile-footer">
+                    <div class="float-end mb-2">
+                        <a href="index.html" class="wd-fg-black wd-no-decoration"
+                            ><button class="btn bg-secondary-subtle">Cancel</button></a
+                        >
+
+                        <a href="index.html" class="wd-no-decoration"
+                            ><button class="btn btn-danger">Save Profile</button></a
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="abcd">
+                <a class="wd-fg-white wd-no-decoration" href="index.html"
+                    ><button class="btn btn-secondary">
+                        <i class="fa fa-pencil" aria-hidden="true"></i> Cancel Editing
+                    </button></a
+                >
+            </div>
+            
+        </div>
+    </body>
 </html>

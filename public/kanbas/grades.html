@@ -4,82 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grades</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="../vendors/fontawesome/css/all.css" rel="stylesheet"/>
+    <link href="../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-    <!-- <style>
-        table {
-            margin: 10px; 
-            border-collapse: separate;
-            border-spacing: 10px;
-        }
-    </style> -->
-    <table>
-        <tr>
-            <td valign = "top">
-                <ul>
-                    <li><a href="profile/index.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="home.html">Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Commons</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </td>
-            <td valign = "top">
-                <ul>
-                    <li><a href="home.html">Home</a></li>    
-                    <li><a href="#">Modules</a></li>
-                    <li><a href="#">Piazza</a></li>
-                    <li><a href="#">Zoom Meetings</a></li>
-                    <li><a href="assignments/index.html">Assignments</a></li>
-                    <li><a href="#">Quizzes</a></li>
-                    <li><a href="grades.html">Grades</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Panapto Video</a></li>
-                    <li><a href="#">Discussions</a></li>
-                    <li><a href="#">Announcements</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="#">Files</a></li>
-                    <li><a href="#">Rubrics</a></li>
-                    <li><a href="#">Outcomes</a></li>
-                    <li><a href="#">Collaboration</a></li>
-                    <li><a href="#">Syllabus</a></li>
-                    <li><a href="settings/index.html">Settings</a></li>
-                </ul>
-            </td>
-            <td valign = "top">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>
-                            <select>
-                            <option selected value="Gradebook">Gradebook</option>
-                            </select>
-                        </th>
-                        <th><button type="button">Import</button></th>
-                        <th>
-                            <select>
-                            <option selected value="Export">Export</option>
-                            </select>
-                        </th>
-                        <th><button type="button">Configure</button></th>
-                    </tr>
-                    </thead>
-                </table>
-                <label><h2>Student Names</h2></label>
-                <input  type="text"
-                    placeholder="Search Students"/>
-                <label><h2>Assignment Names</h2></label>
-                <input  type="text"
-                    placeholder="Search Assignments"/>
-                <p>
-                <button type="button">Apply filters</button>
-                </p>
 
-                <table border="1" width="100%">
+    <div class="wd-grid-row">
+        <div class="wd-kanbas-navigator">
+            <ul>
+            <li class="wd-bg-black mb-2 mt-2">
+                <img src="images/neu_logo.png" />
+            </li>
+            <li>
+                <a href="profile/index.html"><i class="fa fa-user fa-2x wd-fg-white"></i>Account</a> </li> 
+            <li> 
+                <a href="dashboard.html"> <i class="fa fa-bars fa-2x wd-fg-red"></i> Dashboard</a></li>
+            <li style="background-color: white;">
+                <a style="color: #c21f1f" href="home.html"> <i class="fa fa-book fa-2x wd-fg-red"></i> Courses</a>
+            </li>
+            <li> 
+                <a href="#"> <i class="fa fa-calendar fa-2x wd-fg-red"></i> Calendar</a></li>
+            <li>
+                <a href="#"> <i class="fa fa-inbox fa-2x wd-fg-red"></i> Inbox</a>
+            </li>
+            <li>
+                <a href="#"> <i class="fa fa-clock fa-2x wd-fg-red"></i> History</a>
+            </li>
+            <li> 
+                <a href="#"> <i class="fa fa-desktop fa-2x wd-fg-red"></i> Studio</a>
+            </li>
+            <li>
+                <a href="#"> <i class="fa fa-arrow-circle-right fa-2x wd-fg-red"></i> Commons </a>
+            </li>
+            <li>
+                <a href="#"> <i class="fa fa-question-circle fa-2x wd-fg-red"></i> <br> Help</a></li>
+            </ul>
+        </div>
+        <div class="wd-grid-col-page-header"> 
+            <div class="breadcrumb-header">
+                <i style="float: left" class="fa fa-bars fa-2x"> </i> 
+                <nav style="--bs-breadcrumb-divider: '>'; margin-left: 50px" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a style="color: #b52828; text-decoration: none;"href="courses">CS5610 - Web Development</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Grades</li>
+                    </ol>    
+                </nav>    
+            </div>
+            <hr style="margin-top: 25px">
+        </div>
+    </div>
+    <div class="wd-flex-row-container">
+        <div class="wd-kanbas-page-navigator">
+                <li><a href="home.html"> Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li><a href="assignments/index.html">Assignments</a></li>
+                <li><a href="#">Quizzes</a></li>
+                <li class="selected-page-nav-link">
+                    <a href="grades.html">Grades</a>
+                </li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="settings/index.html">Settings</a></li>
+        </div>
+
+        <div class="wd-flex-course-grades col-8">
+            <div class="wd-course-grades-header">
+                <div class="buttons float-end">
+                    <button class="wd-bg-lightgray">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i> Import
+                    </button>
+                    <button class="wd-bg-lightgray">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> 
+                        <select class="wd-bg-lightgray">
+                            <option>Export</option>
+                            <option>Unpublish</option>
+                        </select>
+                    </button>
+                    <button class="wd-bg-lightgray">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="wd-course-grades-searchbars mb-3">
+                <form>
+                    <div class="form-group row">
+                        <div class="col">
+                            <label class="col-form-label col" for="student-search">
+                                Student Names
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label class="col-form-label col-6" for="assignment-search">
+                                Assignment Names
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="student-search"
+                                placeholder="Search Students"
+                            />
+                        </div>
+                        <div class="col">
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="assignment-search"
+                                placeholder="Search Assignments"
+                            />
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="wd-grades-table-filter">
+                <button class="wd-bg-lightgray">
+                    <i class="fa fa-filter" aria-hidden="true"></i> Apply Filters
+                </button>
+            </div>
+
+            <hr />
+
+            <div class="wd-course-assignments-info table-responsive">
+                <table class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th>Student Name</th>
@@ -91,28 +154,28 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Amey</td>
+                        <td class="text-danger">Amey</td>
                         <td>99</td>
                         <td><input type="number" value="99"></td>
                         <td>97</td>
                         <td>100</td>
                     </tr>
                     <tr>
-                        <td>Robert</td>
+                        <td class="text-danger">Robert</td>
                         <td>82</td>
                         <td>92</td>
                         <td>100</td>
                         <td><input type="number" value="87"></td>
                     </tr>
                     <tr>
-                        <td>Chris</td>
+                        <td class="text-danger">Chris</td>
                         <td><input type="number" value="90"></td>
                         <td>99</td>
                         <td>94</td>
                         <td>89</td>
                     </tr>
                     <tr>
-                        <td>Johny</td>
+                        <td class="text-danger">Johny</td>
                         <td>83</td>
                         <td><input type="number" value="89"></td>
                         <td>87</td>
@@ -120,8 +183,8 @@
                     </tr>
                     </tbody>
                  </table>                 
-            </td>
-        </tr>
-    </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
