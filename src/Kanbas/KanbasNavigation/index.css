@@ -1,0 +1,63 @@
+
+.wd-kanbas-navigation-list {
+   text-decoration: none;
+   padding-left: 0px;
+   margin-left: -8px;
+   width: 82px;
+   font-family: Arial;
+   font-size: 0.9em;
+   float: left;
+   min-height: 100vh;
+   position: fixed;
+}
+
+
+
+.wd-kanbas-navigation-list .list-group-item {
+    background-color: black;
+    color: white; 
+    border: none;
+    padding: 0px;
+    margin-left: 5px;
+  }
+
+.wd-kanbas-navigation-list .wd-icon {
+    color: #d41b2c;
+    font-size: 0.9em;
+    height:40px; 
+    width:50px;
+}
+
+.wd-kanbas-navigation-list .wd-image{
+  color: #d41b2c;
+  font-size: 0.9em;
+  height:40px; 
+  width:50px;
+  margin-left: 5px;
+}
+
+.wd-kanbas-navigation-list .wd-icon.wd-account {
+    color:lightslategray;
+}
+
+/* To remove the border from first element on the navigation bar */
+.wd-kanbas-navigation-list .list-group-item:first-child {
+    border: none;
+    border-radius: 0px;
+  }
+
+  
+.wd-kanbas-navigation-list .list-group-item.active {
+    background-color: white;
+    color: #d41b2c;
+    /* border: none;
+    padding: 0px; */
+  }
+  
+  .wd-fg-white {
+    color: white;
+  }
+
+  .wd-kanbas-navigation-list {
+    height: 100%;
+  }

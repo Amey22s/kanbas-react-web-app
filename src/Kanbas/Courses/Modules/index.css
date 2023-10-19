@@ -1,0 +1,41 @@
+/* .btn.wd-bg-lightgray {
+    background-color: 	#f1f1f1;
+}
+
+.list-group-item .module{
+    border: 2px solid white;
+}
+
+.list-group-item.wd-module-item {
+    background-color: #f1f1f1;
+    border: 2px solid silver !important;
+    border-radius: 0px !important;
+
+}
+
+
+.list-group.wd-modules-list {
+    background-color: white;
+}
+ */
+
+.wd-symbol {
+    float: right;
+}
+.list-group.module {
+    background-color: white; 
+    color: black; 
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .list-group-item-secondary {
+    background-color : #a9a9a9;
+    color: black; 
+    border: none;
+    padding: 10px;
+  }
+  
+  .list-group-item-secondary h5 {
+    margin: 0;
+  }
