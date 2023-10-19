@@ -39,3 +39,7 @@
   .list-group-item-secondary h5 {
     margin: 0;
   }
+
+  .wd-modules-screen {
+    size: 200px;
+  }
