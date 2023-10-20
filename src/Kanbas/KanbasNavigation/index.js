@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { BiUserCircle } from "react-icons/bi";
+import { BsPersonFill } from "react-icons/bs";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { BiBookBookmark} from "react-icons/bi";
-import { BsCalendarWeek } from "react-icons/bs";
+import { BsCalendar } from "react-icons/bs";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { AiOutlineHistory } from "react-icons/ai";
 import { TbDeviceDesktopAnalytics } from "react-icons/tb";
@@ -13,10 +13,10 @@ import "./index.css";
 function KanbasNavigation() {
   const links = [ "Account", "Dashboard", "Courses", "Calendar", "Inbox", "History", "Studio", "Help"];
   const linkToIconMap = {
-    Account: <BiUserCircle className="wd-icon wd-account" />,
+    Account: <BsPersonFill className="wd-icon wd-account" />,
     Dashboard: <AiOutlineDashboard className="wd-icon" />,
     Courses: <BiBookBookmark className="wd-icon" />,
-    Calendar: <BsCalendarWeek className="wd-icon" />,
+    Calendar: <BsCalendar className="wd-icon" />,
     Inbox: <HiOutlineMailOpen className="wd-icon" />,
     History: <AiOutlineHistory className="wd-icon" />,
     Studio: <TbDeviceDesktopAnalytics className="wd-icon" />,

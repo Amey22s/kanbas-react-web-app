@@ -1,8 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { HiOutlineEllipsisVertical } from 'react-icons/hi2';
-import { AiOutlinePlus } from 'react-icons/ai';
-import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { AiOutlinePlus, AiFillCheckCircle } from "react-icons/ai";
 import db from "../../Database";
 import './index.css';
 
@@ -26,7 +25,7 @@ function ModuleList() {
             <li className="list-group-item">
             {module.description}
             <HiOutlineEllipsisVertical className="wd-symbol"/>
-            <AiOutlineCheckCircle className="wd-symbol" color="green"/>
+            <AiFillCheckCircle className="wd-symbol" color="green"/>
             </li>
           </ul>
           <br></br>

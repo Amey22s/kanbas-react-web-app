@@ -1,3 +1,31 @@
 .btn.wd-bg-lightgray {
     background-color: 	#f1f1f1;
 }
+
+.course-status-right-mid{
+    margin: 2px;
+    text-decoration: solid;
+    font-weight: bold;
+}
+
+.course-status-right-mid a{
+    font-weight: normal;
+    float: right;
+    text-decoration: none;
+    color: #b52828;
+    padding : 2px;
+}
+
+.course-status-right-mid .course-status-calendar{
+
+    font-weight: normal;
+    float: right;
+    text-decoration: none;
+    color: #b52828;
+    padding : 2px;
+}
+
+.course-status-buttons button {
+    width: 100%;
+    text-align: left;
+}

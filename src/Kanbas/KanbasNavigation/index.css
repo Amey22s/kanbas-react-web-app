@@ -22,14 +22,14 @@
   }
 
 .wd-kanbas-navigation-list .wd-icon {
-    color: #d41b2c;
+    color: #b52828;
     font-size: 0.9em;
     height:40px; 
     width:50px;
 }
 
 .wd-kanbas-navigation-list .wd-image{
-  color: #d41b2c;
+  color: #b52828;
   font-size: 0.9em;
   height:40px; 
   width:50px;
@@ -49,7 +49,7 @@
   
 .wd-kanbas-navigation-list .list-group-item.active {
     background-color: white;
-    color: #d41b2c;
+    color: #b52828;
     /* border: none;
     padding: 0px; */
   }
