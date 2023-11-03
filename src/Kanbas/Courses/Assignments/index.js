@@ -1,19 +1,16 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-// import db from "../../Database";
 import { AiOutlinePlus, AiFillCheckCircle } from "react-icons/ai";
 import { HiOutlineEllipsisVertical } from "react-icons/hi2";
 import { TfiPencilAlt } from 'react-icons/tfi'; 
 import "./index.css";
 import {deleteAssignment} from "./assignmentsReducer";
-// import { addAssignment, updateAssignment, deleteAssignment, selectAssignment} from "./assignmentsReducer";
 import { useSelector, useDispatch } from "react-redux";
 
 
 function Assignments() {
   const { courseId } = useParams();
   const assignments = useSelector((state) => state.assignmentsReducer.assignments);
-  // const assignments = db.assignments;
   const courseAssignments = assignments.filter(
     (assignment) => assignment.course === courseId
   );
@@ -32,10 +29,13 @@ function Assignments() {
             <AiOutlinePlus />
             Group
           </button>
-          <button class="btn btn-danger">
+          <Link
+            to={`/Kanbas/Courses/${courseId}/Assignments/addAssignment`}
+          >
+          <button class="btn btn-danger" >
             <AiOutlinePlus />
             Assignment
-          </button>
+          </button></Link>
           <button class="btn wd-bg-lightgray">
             <HiOutlineEllipsisVertical />
           </button>
@@ -67,10 +67,10 @@ function Assignments() {
             <span className="wd-assignment-title ms-2">{assignment.title}</span>
             <span class="wd-check-ellipse-button-float-end float-end">
             <button class="btn btn-danger me-1" onClick={(e) => {
-                                                        e.preventDefault();
-                                                        dispatch(deleteAssignment(assignment._id))
-                                                      }}
-                                                    >Delete</button>
+                  e.preventDefault();
+                  dispatch(deleteAssignment(assignment._id))
+                }}
+              >Delete</button>
               <AiFillCheckCircle color="green" />
               <HiOutlineEllipsisVertical />
             </span>
