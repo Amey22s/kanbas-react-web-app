@@ -11,16 +11,15 @@ const todosSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
-        console.log(action.payload)
       const newTodos = [
         ...state.todos,
-        {...action.payload, id: new Date().getTime().toString() },
+        {...action.payload, id: state.todos.length + 1},
       ];
       state.todos = newTodos;
       state.todo = { title: "" };
     },
     deleteTodo: (state, action) => {
-      const newTodos = state.todos.filter((todo) => todo.id !== action.payload);
+      const newTodos = state.todos.filter((todo) => todo.id !== action.payload.todo.id);
       state.todos = newTodos;
     },
     updateTodo: (state, action) => {
@@ -31,7 +30,7 @@ const todosSlice = createSlice({
       state.todo = { title: "" };
     },
     setTodo: (state, action) => {
-      state.todo = action.payload;
+      state.todo = action.payload.todo;
     },
   },
 });
