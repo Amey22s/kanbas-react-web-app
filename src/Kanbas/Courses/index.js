@@ -8,12 +8,14 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
+import AddAssignment from "./Assignments/AddAssignment";
 
-function Courses() {
+
+function Courses({courses}) {
   const { courseId } = useParams();
   const windowLocation = useLocation();
   const course = db.courses.find((course) => course._id === courseId);
-  const link = windowLocation.pathname.split("/"); /* To display breadcrumbs */
+  const link = windowLocation.pathname.split("/");
   return (
     <div className="wd-course-screen">
       <nav className="wd-breadcrumb ms-2 mt-2">
@@ -47,6 +49,7 @@ function Courses() {
               path="Assignments/:assignmentId"
               element={<AssignmentEditor />}
             />
+            <Route path="Assignments/addAssignment" element={ <AddAssignment/> } />
             <Route path="Grades" element={<Grades />} />
           </Routes>
         </div>

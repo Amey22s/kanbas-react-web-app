@@ -1,42 +1,47 @@
-import React, { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { updateAssignment } from "../assignmentsReducer";
+import { addAssignment, selectAssignment } from "../assignmentsReducer";
 
-function AssignmentEditor() {
-  const { assignmentId } = useParams();
-  // console.log(assignmentId)
-  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
-  // console.log(assignments)
-  const a = assignments.find((x) => x._id === assignmentId);
-  // console.log(a)
-  const [assignment,setAssignment] = useState(a);
-  console.log(assignment);
-  const dispatch = useDispatch();
+const AddAssignment = () => {
   const { courseId } = useParams();
   const navigate = useNavigate();
+  const assignment = useSelector(
+    (state) => state.assignmentsReducer.assignment
+  );
+  const dispatch = useDispatch();
+
   const handleSave = () => {
-    dispatch(updateAssignment(assignment));  
+    dispatch(addAssignment({ ...assignment, course: courseId }));
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
+
   return (
-    <div className="mt-2">
-      <h6>Assignment Editor</h6>
-      {/* {JSON.stringify(assignment)} */}
+    <>
+      <h6 className="mt-2">Add New Assignment</h6>
       <hr />
       <label className="form-label">
         Assignment Name
         <input
           value={assignment.title}
           onChange={(e) =>
-            setAssignment({ ...assignment, title: e.target.value })
+            dispatch(
+              selectAssignment({
+                ...assignment,
+                title: e.target.value,
+              })
+            )
           }
           className="form-control"
         />
       </label>
       <textarea
         onChange={(e) =>
-          setAssignment({ ...assignment, description: e.target.value })
+          dispatch(
+            selectAssignment({
+              ...assignment,
+              description: e.target.value,
+            })
+          )
         }
         value={assignment.description}
         className="form-control"
@@ -46,7 +51,12 @@ function AssignmentEditor() {
         <div className="col-4">
           <input
             onChange={(e) =>
-              setAssignment({ ...assignment, points: e.target.value })
+              dispatch(
+                selectAssignment({
+                  ...assignment,
+                  points: e.target.value,
+                })
+              )
             }
             value={assignment.points}
             className="form-control"
@@ -59,7 +69,9 @@ function AssignmentEditor() {
         <div className="col-4">
           <input
             onChange={(e) =>
-              setAssignment({ ...assignment, dueDate: e.target.value })
+              dispatch(
+                selectAssignment({ ...assignment, dueDate: e.target.value })
+              )
             }
             type="date"
             value={assignment.dueDate}
@@ -72,10 +84,10 @@ function AssignmentEditor() {
         <div className="col-4">
           <input
             onChange={(e) =>
-              setAssignment({
+              dispatch(selectAssignment({
                 ...assignment,
                 availableFromDate: e.target.value,
-              })
+              }))
             }
             type="date"
             value={assignment.availableFromDate}
@@ -88,10 +100,10 @@ function AssignmentEditor() {
         <div className="col-4">
           <input
             onChange={(e) =>
-              setAssignment({
+              dispatch(selectAssignment({
                 ...assignment,
                 availableUntilDate: e.target.value,
-              })
+              }))
             }
             type="date"
             value={assignment.availableUntilDate}
@@ -107,12 +119,12 @@ function AssignmentEditor() {
         >
           Cancel
         </Link>
-        <button onClick={handleSave} className="btn btn-danger me-2">
+        <button className="btn btn-danger me-2" onClick={handleSave}>
           Save
         </button>
       </div>
-    </div>
+    </>
   );
-}
+};
 
-export default AssignmentEditor;
+export default AddAssignment;
