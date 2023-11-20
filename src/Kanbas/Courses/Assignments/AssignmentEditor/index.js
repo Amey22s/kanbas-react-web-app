@@ -17,8 +17,8 @@ function AssignmentEditor() {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const handleSave = async(assignmentId) => {
+    console.log(assignmentId);
     const status = await service.updateAssignment(assignmentId, assignment);
-    console.log(status);
     dispatch(updateAssignment(assignment));
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
@@ -109,7 +109,7 @@ function AssignmentEditor() {
         >
           Cancel
         </Link>
-        <button onClick={handleSave} className="btn btn-danger me-2">
+        <button onClick={() => handleSave(assignment._id)} className="btn btn-danger me-2">
           Save
         </button>
       </div>

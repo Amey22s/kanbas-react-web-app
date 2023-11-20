@@ -31,15 +31,21 @@ function Kanbas() {
     endDate:"2023-12-15"
   });
 
-  const addNewCourse = () => {
-    setCourses([...courses, {...course, _id:new Date().getTime().toString() }]);
+
+  const addNewCourse = async () => {
+    
+    const response = await axios.post(URL, {...course, _id: new Date().getTime().toString()});
+    setCourses([response.data, ...courses]);
+    setCourse({ name: "", number: "" });
   };
 
-  const deleteCourse = (courseId) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
+  const deleteCourse = async (courseId) => {
+    const response = await axios.delete(`${URL}/${courseId}`);
+    setCourses(courses.filter((c) => c._id !== courseId));
   };
 
-  const updateCourse = () => {
+  const updateCourse = async (courseId) => {
+    const response = await axios.put(`${URL}/${courseId}`, course);
     setCourses(
       courses.map((c) => {
         if (c._id === course._id) {
