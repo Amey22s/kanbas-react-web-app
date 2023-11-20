@@ -4,9 +4,10 @@ import { AiOutlinePlus, AiFillCheckCircle } from "react-icons/ai";
 import { HiOutlineEllipsisVertical } from "react-icons/hi2";
 import { TfiPencilAlt } from 'react-icons/tfi'; 
 import "./index.css";
-import {deleteAssignment} from "./assignmentsReducer";
+import {deleteAssignment, setAssignments} from "./assignmentsReducer";
 import { useSelector, useDispatch } from "react-redux";
-
+import * as service from "./service";
+import { useState, useEffect } from "react";
 
 function Assignments() {
   const { courseId } = useParams();
@@ -15,6 +16,19 @@ function Assignments() {
     (assignment) => assignment.course === courseId
   );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    service
+      .findAssignmentsForCourses(courseId)
+      .then((fetchedAssignments) =>
+        dispatch(setAssignments(fetchedAssignments))
+      );
+  }, [courseId]);
+
+  const handleDeleteAssignment = async (assignmentId) => {
+    const status = await service.deleteAssignment(assignmentId);
+    dispatch(deleteAssignment(assignmentId));
+  };
 
   return (
     <div className="me-5">
@@ -68,7 +82,7 @@ function Assignments() {
             <span class="wd-check-ellipse-button-float-end float-end">
             <button class="btn btn-danger me-1" onClick={(e) => {
                   e.preventDefault();
-                  dispatch(deleteAssignment(assignment._id))
+                  handleDeleteAssignment(assignment._id);
                 }}
               >Delete</button>
               <AiFillCheckCircle color="green" />

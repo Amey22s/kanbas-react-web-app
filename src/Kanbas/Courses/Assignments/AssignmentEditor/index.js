@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateAssignment } from "../assignmentsReducer";
+import * as service from '../service';
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
@@ -15,8 +16,10 @@ function AssignmentEditor() {
   const dispatch = useDispatch();
   const { courseId } = useParams();
   const navigate = useNavigate();
-  const handleSave = () => {
-    dispatch(updateAssignment(assignment));  
+  const handleSave = async(assignmentId) => {
+    const status = await service.updateAssignment(assignmentId, assignment);
+    console.log(status);
+    dispatch(updateAssignment(assignment));
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
   return (

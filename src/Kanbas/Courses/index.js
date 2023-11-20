@@ -1,4 +1,4 @@
-import db from "../../Kanbas/Database";
+// import db from "../../Kanbas/Database";
 import { useParams, Navigate, Routes, Route, useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import "./index.css";
@@ -9,12 +9,26 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import AddAssignment from "./Assignments/AddAssignment";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Courses({courses}) {
   const { courseId } = useParams();
   const windowLocation = useLocation();
-  const course = db.courses.find((course) => course._id === courseId);
+  const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:4000/api" ;
+  const URL = `${API_BASE}/courses`;
+  const [ course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(`${URL}/${courseId}`);
+    setCourse(response.data);
+  }
+
+  useEffect(() => {
+    findCourseById(courseId);
+  },[courseId]);
+
+
+  // const course = db.courses.find((course) => course._id === courseId);
   const link = windowLocation.pathname.split("/");
   return (
     <div className="wd-course-screen">
