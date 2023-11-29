@@ -1,9 +1,9 @@
 function ClickEvent() {
   const hello = () => {
-    alert("Hello World!");
+    alert('Hello World!');
   };
   const good = () => {
-    alert("Life is Good!");
+    alert('Life is Good!');
   };
   return (
     <div>

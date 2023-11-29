@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 function EventObject() {
   const [event, setEvent] = useState(null);
   const handleClick = (e) => {

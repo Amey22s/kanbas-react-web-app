@@ -1,18 +1,17 @@
-import ES5Functions from "./ES5Functions";
 import ArrowFunctions from "./ArrowFunctions";
-import ImpliedReturns from "./ImpliedReturn";
+import ES5Functions from "./ES5Functions";
 import FunctionParenthesisAndParameters from "./FunctionParenthesisAndParameters";
+import ImpliedReturn from "./ImpliedReturn";
 
-function WorkingWithFunctions()
-{
-    return(
-       <div>
-          <ES5Functions/>
-          <ArrowFunctions/>
-          <ImpliedReturns/>
-          <FunctionParenthesisAndParameters/>
-       </div>
-    );
+function WorkingWithFunctions() {
+  return (
+    <div>
+      <ES5Functions />
+      <ArrowFunctions />
+      <ImpliedReturn />
+      <FunctionParenthesisAndParameters />
+    </div>
+  );
 }
 
-export default WorkingWithFunctions
+export default WorkingWithFunctions;
