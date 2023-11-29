@@ -1,8 +1,8 @@
-import React from 'react';
-import HelloRedux from './HelloRedux';
-import CounterRedux from './CounterRedux';
-import AddRedux from './AddRedux';
-import TodoList from './todos/ToDoList';
+import React from "react";
+import HelloRedux from "./HelloRedux";
+import CounterRedux from "./CounterRedux";
+import AddRedux from "./AddRedux";
+import TodoList from "./todos/ToDoList";
 
 const ReduxExamples = () => {
   return (

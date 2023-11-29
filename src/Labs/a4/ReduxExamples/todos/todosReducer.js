@@ -1,25 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   todos: [
-    { id: '1', title: 'Learn React' },
-    { id: '2', title: 'Learn Node' },
+    { id: "1", title: "Learn React" },
+    { id: "2", title: "Learn Node" },
   ],
-  todo: { title: 'Learn Mongo' },
+  todo: { title: "Learn Mongo" },
 };
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     addTodo: (state, action) => {
       const newTodos = [
         ...state.todos,
-        { ...action.payload, id: new Date().getTime().toString() },
+        {...action.payload, id: state.todos.length + 1},
       ];
       state.todos = newTodos;
-      state.todo = { title: '' };
+      state.todo = { title: "" };
     },
     deleteTodo: (state, action) => {
-      const newTodos = state.todos.filter((todo) => todo.id !== action.payload);
+      const newTodos = state.todos.filter((todo) => todo.id !== action.payload.todo.id);
       state.todos = newTodos;
     },
     updateTodo: (state, action) => {
@@ -27,10 +27,10 @@ const todosSlice = createSlice({
         item.id === action.payload.id ? action.payload : item
       );
       state.todos = newTodos;
-      state.todo = { title: '' };
+      state.todo = { title: "" };
     },
     setTodo: (state, action) => {
-      state.todo = action.payload;
+      state.todo = action.payload.todo;
     },
   },
 });

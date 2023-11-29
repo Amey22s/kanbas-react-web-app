@@ -1,5 +1,7 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { addTodo, updateTodo, setTodo } from './todosReducer';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addTodo, updateTodo, setTodo } from "./todosReducer";
+
 function TodoForm() {
   const { todo } = useSelector((state) => state.todosReducer);
   const dispatch = useDispatch();
@@ -9,7 +11,7 @@ function TodoForm() {
       <button onClick={() => dispatch(updateTodo(todo))}> Update </button>
       <input
         value={todo.title}
-        onChange={(e) => dispatch(setTodo({ ...todo, title: e.target.value }))}
+        onChange={(e) => dispatch(setTodo({todo:{ ...todo, title: e.target.value }}))}
       />
     </li>
   );
