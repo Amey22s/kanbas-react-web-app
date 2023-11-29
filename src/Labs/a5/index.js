@@ -1,8 +1,7 @@
-import SimpleAPIExamples from "./simpleapiexamples";
+import SimpleAPIExamples from './SimpleAPIExamples';
 import EncodingParametersInURLs from './EncodingParametersInURLs';
 import WorkingWithObjects from './WorkingWithObjects';
 import WorkingWithArrays from './WorkingWithArrays';
-
 function Assignment5() {
   const API_BASE =
     process.env.REACT_APP_API_BASE_LAB || 'http://localhost:4000/a5';
