@@ -1,27 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 function EncodingParametersInURLs() {
-  const API_BASE =
-    process.env.REACT_APP_API_BASE_LAB || 'http://localhost:4000/a5';
   const [a, setA] = useState(34);
   const [b, setB] = useState(23);
-  const [welcome, setWelcome] = useState('');
+  const [welcome, setWelcome] = useState("");
+  const [result, setResult] = useState(0);
+
+  const fetchSum = async (a, b) => {
+    const response = await axios.get(`http://localhost:4000/a5/add/${a}/${b}`);
+    setResult(response.data);
+  };
+  const fetchSubtraction = async (a, b) => {
+    const response = await axios.get(
+      `http://localhost:4000/a5/subtract/${a}/${b}`
+    );
+    setResult(response.data);
+  };
+
   const fetchWelcome = async () => {
-    const response = await axios.get(`${API_BASE}/welcome`);
+    const response = await axios.get("http://localhost:4000/a5/welcome");
     setWelcome(response.data);
   };
   useEffect(() => {
     fetchWelcome();
   }, []);
-  const [result, setResult] = useState(0);
-  const fetchSum = async (a, b) => {
-    const response = await axios.get(`${API_BASE}/add/${a}/${b}`);
-    setResult(response.data);
-  };
-  const fetchSubtraction = async (a, b) => {
-    const response = await axios.get(`${API_BASE}/subtract/${a}/${b}`);
-    setResult(response.data);
-  };
 
   return (
     <div>
@@ -42,7 +44,6 @@ function EncodingParametersInURLs() {
         type="number"
         value={b}
       />
-
       <input
         value={result}
         className="form-control mb-2"
@@ -62,24 +63,29 @@ function EncodingParametersInURLs() {
       >
         Fetch Substraction of {a} - {b}
       </button>
-
       <h3>Path Parameters</h3>
-      <a href={`${API_BASE}/add/${a}/${b}`} className="btn btn-primary">
-        Add {a} + {b}
-      </a>
-      <a href={`${API_BASE}/subtract/${a}/${b}`} className="btn btn-danger">
-        Substract {a} - {b}
-      </a>
-
-      <h3>Query Parameters</h3>
       <a
-        href={`${API_BASE}/calculator?operation=add&a=${a}&b=${b}`}
+        href={`http://localhost:4000/a5/add/${a}/${b}`}
         className="btn btn-primary"
       >
         Add {a} + {b}
       </a>
       <a
-        href={`${API_BASE}/calculator?operation=subtract&a=${a}&b=${b}`}
+        href={`http://localhost:4000/a5/subtract/${a}/${b}`}
+        className="btn btn-danger"
+      >
+        Substract {a} - {b}
+      </a>
+
+      <h3>Query Parameters</h3>
+      <a
+        href={`http://localhost:4000/a5/calculator?operation=add&a=${a}&b=${b}`}
+        className="btn btn-primary"
+      >
+        Add {a} + {b}
+      </a>
+      <a
+        href={`http://localhost:4000/a5/calculator?operation=subtract&a=${a}&b=${b}`}
         className="btn btn-danger"
       >
         Substract {a} - {b}
