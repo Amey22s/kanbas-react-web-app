@@ -1,4 +1,4 @@
-import SimpleAPIExamples from './SimpleAPIExamples';
+import SimpleAPIExamples from "./simpleapiexamples";
 import EncodingParametersInURLs from './EncodingParametersInURLs';
 import WorkingWithObjects from './WorkingWithObjects';
 import WorkingWithArrays from './WorkingWithArrays';
